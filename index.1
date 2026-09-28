@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة استكشاف كنوز الكويت 💖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        paper: '#fff0f5', // Lavender blush
+                        'paper-dark': '#ffe4e1', // Misty rose
+                        ink: '#4a235a', // Dark purple text
+                        accent: '#ff69b4', // Hot pink
+                        'accent-hover': '#ff1493', // Deep pink
+                        danger: '#ff4500', // Orange red
+                        success: '#32cd32', // Lime green
+                        'pastel-purple': '#e6e6fa',
+                        'pastel-pink': '#ffd1dc',
+                        'pastel-blue': '#d6eaf8',
+                        'pastel-yellow': '#fffacd'
+                    },
+                    fontFamily: {
+                        arabic: ['Cairo', 'sans-serif'],
+                        english: ['Fredoka', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #ffb6c1; /* Light pink background */
+            background-image: 
+                radial-gradient(circle at 100% 150%, #ffb6c1 24%, white 25%, white 28%, #ffb6c1 29%, #ffb6c1 36%, white 36%, white 40%, transparent 40%, transparent),
+                radial-gradient(circle at 0 150%, #ffb6c1 24%, white 25%, white 28%, #ffb6c1 29%, #ffb6c1 36%, white 36%, white 40%, transparent 40%, transparent),
+                radial-gradient(circle at 50% 100%, white 10%, #ffb6c1 11%, #ffb6c1 23%, white 24%, white 30%, #ffb6c1 31%, #ffb6c1 43%, white 44%, white 50%, #ffb6c1 51%, #ffb6c1 63%, white 64%, white 71%, transparent 71%, transparent),
+                radial-gradient(circle at 100% 50%, white 5%, #ffb6c1 6%, #ffb6c1 15%, white 16%, white 20%, #ffb6c1 21%, #ffb6c1 30%, white 31%, white 35%, #ffb6c1 36%, #ffb6c1 45%, white 46%, white 49%, transparent 50%, transparent),
+                radial-gradient(circle at 0 50%, white 5%, #ffb6c1 6%, #ffb6c1 15%, white 16%, white 20%, #ffb6c1 21%, #ffb6c1 30%, white 31%, white 35%, #ffb6c1 36%, #ffb6c1 45%, white 46%, white 49%, transparent 50%, transparent);
+            background-size:100px 50px;
+            font-family: 'Cairo', sans-serif;
+            color: #4a235a;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        .game-container {
+            background-color: #fff0f5;
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.4), inset 0 0 50px rgba(255, 192, 203, 0.5);
+            border: 4px solid #ff69b4;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Sparkle effect */
+        .sparkle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23FFD700" d="M256 0c0 141.4-114.6 256-256 256 141.4 0 256 114.6 256 256 0-141.4 114.6-256 256-256-141.4 0-256-114.6-256-256z"/></svg>');
+            background-size: cover;
+            animation: twinkle 1.5s infinite alternate;
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        @keyframes twinkle {
+            0% { transform: scale(0.5); opacity: 0.5; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* Page Transitions */
+        .page {
+            display: none;
+            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .page.active {
+            display: flex;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            80% { transform: scale(1.02); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Buttons & Interactions */
+        .btn-primary {
+            background: linear-gradient(145deg, #ff69b4, #ff1493);
+            color: white;
+            border: 3px solid #ffc0cb;
+            box-shadow: 0 6px 0 #c71585, 0 10px 15px rgba(255,105,180,0.4);
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 50px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .btn-primary:active {
+            transform: translateY(6px);
+            box-shadow: 0 0 0 #c71585, 0 0 0 rgba(255,105,180,0);
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-option {
+            background-color: white;
+            border: 3px solid #ffb6c1;
+            border-radius: 15px;
+            transition: all 0.2s;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(255,182,193,0.3);
+            color: #4a235a;
+        }
+        .btn-option:hover:not(:disabled) {
+            background-color: #fff0f5;
+            transform: scale(1.05) rotate(2deg);
+            border-color: #ff69b4;
+        }
+        .btn-option.correct {
+            background-color: #e0ffd4;
+            border-color: #32cd32;
+            color: #006400;
+            box-shadow: 0 0 15px rgba(50, 205, 50, 0.5);
+            animation: pulse-green 1s infinite;
+        }
+        .btn-option.wrong {
+            background-color: #ffe4e1;
+            border-color: #ff4500;
+            color: #8b0000;
+            animation: shake 0.4s;
+        }
+
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(50, 205, 50, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(50, 205, 50, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(50, 205, 50, 0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0) rotate(0); }
+            25% { transform: translateX(-5px) rotate(-3deg); }
+            50% { transform: translateX(5px) rotate(3deg); }
+            75% { transform: translateX(-5px) rotate(-3deg); }
+        }
+
+        /* Specific Elements */
+        .card {
+            background: white;
+            border: 3px dashed #ffb6c1;
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(255, 182, 193, 0.2);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(255, 182, 193, 0.4);
+        }
+
+        .english-text {
+            font-family: 'Fredoka', sans-serif;
+            direction: ltr;
+        }
+
+        /* Map Pins */
+        .map-pin {
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+        }
+        .map-pin:hover {
+            transform: scale(1.3) translateY(-10px);
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            background: linear-gradient(135deg, #fff, #ffe4e1);
+            border: 3px solid #ff69b4;
+            padding: 12px;
+            border-radius: 15px;
+            width: 220px;
+            text-align: center;
+            z-index: 10;
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+            font-weight: bold;
+            color: #4a235a;
+        }
+        .tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px 10px 0;
+            border-style: solid;
+            border-color: #ff69b4 transparent transparent transparent;
+        }
+
+        /* Matching Game */
+        .match-item {
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .match-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: all 0.5s;
+        }
+        .match-item:hover::before {
+            left: 100%;
+        }
+        .match-item.selected {
+            border-color: #ff69b4;
+            background-color: #ffe4e1;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+            z-index: 5;
+        }
+        .match-item.matched {
+            border-color: #32cd32;
+            background-color: #f0fff0;
+            opacity: 0.8;
+            pointer-events: none;
+            transform: scale(0.95);
+        }
+
+        /* Word Machine (Cute Version) */
+        .machine-part {
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .machine-result {
+            transform: scale(0) rotate(-10deg);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .machine-result.show {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-8">
+
+    <div class="game-container w-full max-w-4xl h-[85vh] sm:h-[800px] flex flex-col relative">
+        
+        <!-- Background Decorations -->
+        <div class="absolute top-4 left-4 text-3xl opacity-30 floating">🌸</div>
+        <div class="absolute bottom-4 right-4 text-4xl opacity-30 floating" style="animation-delay: 1s;">✨</div>
+        <div class="absolute top-20 right-10 text-2xl opacity-30 floating" style="animation-delay: 2s;">🎀</div>
+        <div class="absolute bottom-20 left-10 text-3xl opacity-30 floating" style="animation-delay: 1.5s;">💖</div>
+
+        <!-- Header / Navigation Bar -->
+        <div class="bg-white/80 backdrop-blur-sm p-4 flex justify-between items-center border-b-4 border-pink-200 z-10 rounded-t-[26px]">
+            <div class="font-bold text-xl flex items-center gap-2 text-ink">
+                <span class="bg-pink-100 p-2 rounded-full text-accent"><i class="fa-solid fa-crown"></i></span>
+                رحلة الأميرات 👑
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="text-accent text-xl animate-pulse">💖</div>
+                <div id="progress-indicator" class="text-md font-bold bg-pink-100 text-ink px-4 py-2 rounded-full shadow-sm border-2 border-pink-200">
+                    ١ / ١٠
+                </div>
+            </div>
+        </div>
+
+        <div id="page-0" class="page active flex-col items-center justify-center h-full p-6 text-center relative z-10 bg-gradient-to-b from-paper to-pastel-pink">
+            <div class="text-7xl mb-6 text-accent drop-shadow-lg floating">
+                🏰
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-ink leading-tight drop-shadow-sm">
+                مرحباً بكِ يا أميرتي الحلوة 💖<br>في رحلة استكشاف كنوزنا
+            </h1>
+            <p class="text-xl md:text-2xl mb-12 text-ink/80 font-bold bg-white/50 px-6 py-2 rounded-full inline-block border-2 border-white border-dashed">هل أنتِ مستعدة للمغامرة؟ ✨</p>
+            
+            <button onclick="nextPage()" class="btn-primary text-2xl font-bold py-4 px-12 rounded-full flex items-center gap-4 relative overflow-hidden group">
+                <span class="relative z-10">ابدئي الرحلة 🚀</span>
+                <i class="fa-solid fa-wand-magic-sparkles relative z-10 group-hover:rotate-12 transition-transform"></i>
+                <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full"></div>
+            </button>
+        </div>
+
+        <div id="page-1" class="page flex-col h-full p-6 relative z-10 overflow-y-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 bg-white/90 inline-block mx-auto py-3 px-8 rounded-2xl border-2 border-pink-300 shadow-sm text-ink flex items-center gap-3">
+                <i class="fa-solid fa-book-open text-accent"></i> كلماتنا السحرية لليوم 📖
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 flex-grow items-center max-w-3xl mx-auto w-full">
+                <div class="card p-6 flex flex-col items-center justify-center text-center bg-pastel-purple/30 border-purple-200 group">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">⚔️</div>
+                    <div class="english-text text-3xl font-bold text-purple-900 mb-2 tracking-wide">Fought</div>
+                    <div class="text-xl font-bold text-purple-700 bg-white px-4 py-1 rounded-full shadow-sm">حارب / دافع</div>
+                </div>
+                
+                <div class="card p-6 flex flex-col items-center justify-center text-center bg-pastel-pink/40 border-pink-300 group">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">👯‍♀️</div>
+                    <div class="english-text text-3xl font-bold text-pink-900 mb-2 tracking-wide">Society</div>
+                    <div class="text-xl font-bold text-pink-700 bg-white px-4 py-1 rounded-full shadow-sm">مجتمع</div>
+                </div>
+
+                <div class="card p-6 flex flex-col items-center justify-center text-center bg-pastel-blue/40 border-blue-200 group">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🕊️</div>
+                    <div class="english-text text-3xl font-bold text-blue-900 mb-2 tracking-wide">Peace</div>
+                    <div class="text-xl font-bold text-blue-700 bg-white px-4 py-1 rounded-full shadow-sm">سلام</div>
+                </div>
+
+                <div class="card p-6 flex flex-col items-center justify-center text-center bg-pastel-yellow/50 border-yellow-300 group">
+                    <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🛡️💖</div>
+                    <div class="english-text text-2xl font-bold text-yellow-900 mb-2 tracking-wide">Protect / Courage</div>
+                    <div class="text-xl font-bold text-yellow-700 bg-white px-4 py-1 rounded-full shadow-sm">يحمي / شجاعة</div>
+                </div>
+            </div>
+
+            <div class="flex justify-end mt-6">
+                <button onclick="nextPage()" class="btn-primary py-3 px-8 rounded-full font-bold text-xl flex items-center gap-2">التالي <i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+        </div>
+
+        <div id="page-2" class="page flex-col h-full p-4 md:p-6 relative z-10 overflow-y-auto">
+            <h2 class="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-3 bg-white/80 py-3 rounded-2xl border-2 border-pink-200 text-ink shadow-sm">
+                <i class="fa-solid fa-lock text-accent"></i> افتحي الأقفال بالإجابة الصحيحة! 🗝️
+            </h2>
+            
+            <div class="space-y-5 english-text text-lg max-w-3xl mx-auto w-full" dir="ltr">
+                <!-- Q1 -->
+                <div class="card p-5 bg-white/90">
+                    <p class="mb-4 font-bold text-xl text-ink">1. People of Kuwait <span class="inline-block w-24 border-b-4 border-pink-300 mx-1"></span> hard for their land.</p>
+                    <div class="flex flex-wrap gap-3" id="q1-options">
+                        <button class="btn-option px-6 py-2 font-bold text-lg" onclick="checkVocab(this, 1, false)">stayed</button>
+                        <button class="btn-option px-6 py-2 font-bold text-lg" onclick="checkVocab(this, 1, true)">fought</button>
+                        <button class="btn-option px-6 py-2 font-bold text-lg" onclick="checkVocab(this, 1, false)">rang</button>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="card p-5 bg-white/90">
+                    <p class="mb-4 font-bold text-xl text-ink">2. In the past people lived in <span class="inline-block w-24 border-b-4 border-pink-300 mx-1"></span> with their neighbours.</p>
+                    <div class="flex flex-wrap gap-3" id="q2-options">
+                        <button class="btn-option px-6 py-2 font-bold text-lg" onclick="checkVocab(this, 2, false)">changed</button>
+                        <button class="btn-option px-6 py-2 font-bold text-lg" onclick="checkVocab(this, 2, true)">peace</button>
+                        <button class="btn-option px-6 py-2 font-bold text-lg" onclick="checkVocab(this, 2, false)">battle</button>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="card p-5 bg-white/90">
+                    <p class="mb-4 font-bold text-xl text-ink">3. <span class="inline-block w-24 border-b-4 border-pink-300 mx-1"></span> is a group of people living together.</p>
+                    <div class="flex flex-wrap gap-3" id="q3-options">
+                        <button class="btn-option px-5 py-2 font-bold text-lg" onclick="checkVocab(this, 3, false)">symbol</button>
+                        <button class="btn-option px-5 py-2 font-bold text-lg" onclick="checkVocab(this, 3, true)">Society</button>
+                        <button class="btn-option px-5 py-2 font-bold text-lg" onclick="checkVocab(this, 3, false)">Island</button>
+                        <button class="btn-option px-5 py-2 font-bold text-lg" onclick="checkVocab(this, 3, false)">Castle</button>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="card p-5 bg-white/90">
+                    <p class="mb-4 font-bold text-xl text-ink">4. We should <span class="inline-block w-24 border-b-4 border-pink-300 mx-1"></span> our country.</p>
+                    <div class="flex flex-wrap gap-3" id="q4-options">
+                        <button class="btn-option px-6 py-2 font-bold text-lg" onclick="checkVocab(this, 4, false)">Pride</button>
+                        <button class="btn-option px-6 py-2 font-bold text-lg" onclick="checkVocab(this, 4, false)">attend</button>
+                        <button class="btn-option px-6 py-2 font-bold text-lg" onclick="checkVocab(this, 4, true)">protect</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mt-6" dir="rtl">
+                <p id="vocab-msg" class="font-bold text-accent bg-white px-4 py-2 rounded-full border border-pink-200 hidden shadow-sm"><i class="fa-solid fa-circle-info"></i> جاوبي على كل الأسئلة يا حلوة عشان تفتحين الباب! 🚪</p>
+                <button id="btn-next-vocab" onclick="nextPage()" class="btn-primary py-3 px-8 rounded-full font-bold text-xl opacity-50 cursor-not-allowed pointer-events-none mr-auto flex items-center gap-2 transition-all duration-300">التالي <i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+        </div>
+
+        <div id="page-3" class="page flex-col h-full p-6 relative z-10 overflow-y-auto">
+            <h2 class="text-3xl font-bold text-center mb-6 text-ink drop-shadow-sm flex justify-center items-center gap-3">
+                ✨ القواعد السحرية ✨
+            </h2>
+            
+            <div class="flex-grow flex flex-col md:flex-row gap-6 items-stretch justify-center max-w-5xl mx-auto w-full">
+                
+                <!-- Past -->
+                <div class="card p-6 bg-pastel-yellow/30 border-yellow-400 w-full md:w-1/3 text-center flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-800 bg-white/80 py-2 rounded-xl">الماضي (Past) 🕰️</h3>
+                    <div class="english-text text-2xl font-bold space-y-4 text-ink bg-white/60 p-4 rounded-2xl border-2 border-white shadow-sm flex-grow flex flex-col justify-center">
+                        <p class="flex items-center justify-center gap-3">is <i class="fa-solid fa-arrow-right text-pink-400"></i> <span class="text-pink-600">was</span></p>
+                        <p class="flex items-center justify-center gap-3">fight <i class="fa-solid fa-arrow-right text-pink-400"></i> <span class="text-pink-600">fought</span></p>
+                        <p class="flex items-center justify-center gap-3">buy <i class="fa-solid fa-arrow-right text-pink-400"></i> <span class="text-pink-600">bought</span></p>
+                    </div>
+                </div>
+
+                <!-- Magic Box -->
+                <div class="w-full md:w-1/3 flex flex-col items-center justify-center group">
+                    <div class="bg-gradient-to-br from-white to-pink-50 p-6 rounded-3xl border-4 border-dashed border-accent text-center relative z-10 shadow-xl group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute -top-6 -right-6 text-4xl floating">🪄</div>
+                        <p class="font-bold text-xl mb-3 text-ink">لما نسولف عن الماضي نستخدم <span class="english-text text-accent inline-block mt-1">Past Simple</span></p>
+                        <div class="h-px bg-pink-200 w-full my-3"></div>
+                        <p class="font-bold mb-4 text-gray-700">تذكري يا أميرة.. الكلمة <span class="english-text bg-accent text-white px-2 py-1 rounded-lg font-black text-xl mx-1 shadow-sm">didn't</span> قوية وايد، وترجع الفعل لأصله! 💪</p>
+                        
+                        <div class="english-text bg-pink-100 p-4 rounded-2xl mt-4 font-bold border-2 border-pink-300 shadow-inner">
+                            <span class="text-accent text-2xl">didn't</span> <span class="text-gray-500">+</span> <span class="text-purple-700 text-2xl">verb</span> <br>
+                            <span class="text-sm font-arabic text-purple-500 bg-white px-3 py-1 rounded-full inline-block mt-2">(بدون ولا إضافة)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example -->
+                <div class="card p-6 bg-pastel-blue/30 border-blue-300 w-full md:w-1/3 text-center flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-800 bg-white/80 py-2 rounded-xl">شوفي المثال 👀</h3>
+                    <div class="english-text font-bold bg-white/60 p-4 rounded-2xl border-2 border-white shadow-sm flex-grow flex flex-col justify-center gap-4">
+                        <div class="bg-red-50 p-3 rounded-xl border border-red-200 flex items-center justify-center gap-2">
+                            <p class="line-through text-red-400 text-xl">didn't + ate</p>
+                            <i class="fa-solid fa-xmark text-red-500 text-2xl"></i>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-xl border-2 border-green-400 flex items-center justify-center gap-2 shadow-md transform scale-110">
+                            <p class="text-green-700 text-2xl">didn't + eat</p>
+                            <i class="fa-solid fa-check text-green-500 text-2xl drop-shadow-md"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-end mt-6">
+                <button onclick="nextPage()" class="btn-primary py-3 px-8 rounded-full font-bold text-xl flex items-center gap-2">فهمت! التالي <i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+        </div>
+
+        <div id="page-4" class="page flex-col h-full p-4 md:p-6 relative z-10 overflow-y-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 flex items-center justify-center gap-3 bg-white/80 py-3 rounded-2xl border-2 border-pink-200 text-ink shadow-sm">
+                <i class="fa-solid fa-wand-magic-sparkles text-accent"></i> آلة الزمن: عدلي الجمل عشان نرجع للماضي! ⏱️
+            </h2>
+            
+            <div class="space-y-5 english-text text-lg w-full max-w-3xl mx-auto" dir="ltr">
+                <!-- Q1 -->
+                <div class="card p-5 flex flex-col sm:flex-row justify-between items-center gap-4 bg-white/90">
+                    <p class="font-bold text-xl text-ink">Last week, there <span class="bg-red-100 px-3 py-1 rounded-lg line-through text-red-600 border border-red-200">is</span> a strong wind. 🌬️</p>
+                    <div class="flex gap-3">
+                        <button class="btn-option px-5 py-2 font-bold text-lg" onclick="checkGrammar(this, 1, false)">are</button>
+                        <button class="btn-option px-5 py-2 font-bold text-lg" onclick="checkGrammar(this, 1, true)">was</button>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="card p-5 flex flex-col sm:flex-row justify-between items-center gap-4 bg-white/90">
+                    <p class="font-bold text-xl text-ink">She didn't <span class="border-b-4 border-dashed border-pink-300 px-6 inline-block"></span> breakfast this morning. 🥞</p>
+                    <div class="flex gap-3">
+                        <button class="btn-option px-5 py-2 font-bold text-lg" onclick="checkGrammar(this, 2, true)">eat</button>
+                        <button class="btn-option px-5 py-2 font-bold text-lg" onclick="checkGrammar(this, 2, false)">ate</button>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="card p-5 flex flex-col sm:flex-row justify-between items-center gap-4 bg-white/90">
+                    <p class="font-bold text-xl text-ink">The two cats <span class="border-b-4 border-dashed border-pink-300 px-6 inline-block"></span> yesterday. 🐈🐈‍⬛</p>
+                    <div class="flex gap-3">
+                        <button class="btn-option px-5 py-2 font-bold text-lg" onclick="checkGrammar(this, 3, false)">fight</button>
+                        <button class="btn-option px-5 py-2 font-bold text-lg" onclick="checkGrammar(this, 3, true)">fought</button>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="card p-5 flex flex-col sm:flex-row justify-between items-center gap-4 bg-white/90">
+                    <p class="font-bold text-xl text-ink">Dad <span class="border-b-4 border-dashed border-pink-300 px-6 inline-block"></span> a new car last month. 🚗</p>
+                    <div class="flex gap-3 flex-wrap justify-end">
+                        <button class="btn-option px-4 py-2 font-bold text-lg" onclick="checkGrammar(this, 4, false)">buy</button>
+                        <button class="btn-option px-4 py-2 font-bold text-lg" onclick="checkGrammar(this, 4, false)">buys</button>
+                        <button class="btn-option px-4 py-2 font-bold text-lg" onclick="checkGrammar(this, 4, true)">bought</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mt-6" dir="rtl">
+                <button id="btn-next-grammar" onclick="nextPage()" class="btn-primary py-3 px-8 rounded-full font-bold text-xl opacity-50 cursor-not-allowed pointer-events-none mr-auto flex items-center gap-2">التالي <i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+        </div>
+
+        <div id="page-5" class="page flex-col h-full p-4 relative z-10">
+            <h2 class="text-xl md:text-2xl font-bold text-center mb-4 text-ink bg-white/80 py-2 px-4 rounded-full inline-block mx-auto border-2 border-pink-200">
+                أجدادنا بنوا أماكن وايد حلوة. طقي على الأماكن عشان نتعرف عليها! 🗺️
+            </h2>
+            
+            <style>
+                /* Remove pointer from the new picture popups */
+                .place-popup::after { display: none !important; }
+            </style>
+            
+            <div class="flex-grow relative bg-gradient-to-br from-blue-50 to-blue-200 rounded-3xl border-4 border-pink-300 overflow-hidden shadow-inner mx-auto w-full max-w-3xl flex items-center justify-center">
+                
+                <!-- Map of Kuwait SVG -->
+                <svg viewBox="0 0 100 100" class="absolute w-[85%] h-[85%] drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)]" style="fill: #fdf5e6; stroke: #deb887; stroke-width: 1.5;">
+                    <!-- Stylized Kuwait shape -->
+                    <path d="M 15 95 C 20 70, 35 50, 50 40 C 65 30, 80 25, 95 20 C 95 40, 85 60, 75 75 C 60 85, 35 95, 15 95 Z" />
+                    <!-- Map trail decoration -->
+                    <path d="M 45 40 Q 60 60 70 70" fill="none" stroke="#ff69b4" stroke-width="1" stroke-dasharray="2,2"/>
+                </svg>
+
+                <!-- Label -->
+                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-5 py-2 rounded-2xl font-black text-pink-500 shadow-md border-2 border-pink-200 english-text text-lg flex items-center gap-2 z-10">
+                    🗺️ Kuwait Map
+                </div>
+                
+                <!-- Map Decoration -->
+                <div class="absolute bottom-4 left-4 opacity-50 text-6xl pointer-events-none floating" style="animation-duration: 4s;">🧭</div>
+                
+                <!-- Pins -->
+                
+                <!-- Red Palace -->
+                <div class="map-pin absolute top-[40%] left-[30%] flex flex-col items-center group" onclick="showTooltip('tooltip-redpalace', this)">
+                    <div class="text-6xl text-red-500 drop-shadow-md group-hover:animate-bounce">📍</div>
+                    <div class="english-text font-bold bg-white px-3 py-1 rounded-full mt-1 text-sm border-2 border-red-200 shadow-sm text-red-900">Red Palace</div>
+                </div>
+                <div id="tooltip-redpalace" class="tooltip place-popup !fixed !top-1/2 !left-1/2 !transform !-translate-x-1/2 !-translate-y-1/2 bg-white p-5 rounded-3xl border-4 border-red-400 shadow-[0_15px_50px_rgba(255,0,0,0.3)] !w-[320px] z-50 text-center">
+                    <img src="https://placehold.co/400x300/ffe4e1/ff69b4?text=Red+Palace+🏰" class="w-full rounded-2xl border-2 border-red-200 mb-3 shadow-inner object-cover" alt="Red Palace Picture">
+                    <h3 class="english-text font-black text-red-600 text-2xl mb-2">Al-Jahra Red Palace</h3>
+                    <p class="english-text text-lg font-bold text-gray-700 leading-snug">A famous building built to protect Kuwait and its people. 🛡️</p>
+                    <div class="mt-4 bg-red-100 text-red-800 text-sm py-1 px-4 rounded-full inline-block font-bold">Tap anywhere to close ✨</div>
+                </div>
+
+                <!-- Souq Al-Mubarakiya -->
+                <div class="map-pin absolute top-[28%] right-[32%] flex flex-col items-center group" onclick="showTooltip('tooltip-souq', this)">
+                    <div class="text-6xl text-orange-500 drop-shadow-md group-hover:animate-bounce">📍</div>
+                    <div class="english-text font-bold bg-white px-3 py-1 rounded-full mt-1 text-sm border-2 border-orange-200 shadow-sm text-orange-900">Souq Mubarakiya</div>
+                </div>
+                <div id="tooltip-souq" class="tooltip place-popup !fixed !top-1/2 !left-1/2 !transform !-translate-x-1/2 !-translate-y-1/2 bg-white p-5 rounded-3xl border-4 border-orange-400 shadow-[0_15px_50px_rgba(255,165,0,0.3)] !w-[320px] z-50 text-center">
+                    <img src="https://placehold.co/400x300/ffebcd/ff8c00?text=Souq+Al-Mubarakiya+🛍️" class="w-full rounded-2xl border-2 border-orange-200 mb-3 shadow-inner object-cover" alt="Souq Al-Mubarakiya Picture">
+                    <h3 class="english-text font-black text-orange-600 text-2xl mb-2">Souq Al-Mubarakiya</h3>
+                    <p class="english-text text-lg font-bold text-gray-700 leading-snug">The traditional commercial center for buying and selling. 🛍️</p>
+                    <div class="mt-4 bg-orange-100 text-orange-800 text-sm py-1 px-4 rounded-full inline-block font-bold">Tap anywhere to close ✨</div>
+                </div>
+
+                <!-- Kushk Mubarak -->
+                <div class="map-pin absolute top-[42%] right-[22%] flex flex-col items-center group" onclick="showTooltip('tooltip-kushk', this)">
+                    <div class="text-6xl text-amber-500 drop-shadow-md group-hover:animate-bounce">📍</div>
+                    <div class="english-text font-bold bg-white px-3 py-1 rounded-full mt-1 text-sm border-2 border-amber-200 shadow-sm text-amber-900">Kushk Mubarak</div>
+                </div>
+                <div id="tooltip-kushk" class="tooltip place-popup !fixed !top-1/2 !left-1/2 !transform !-translate-x-1/2 !-translate-y-1/2 bg-white p-5 rounded-3xl border-4 border-amber-400 shadow-[0_15px_50px_rgba(255,191,0,0.3)] !w-[320px] z-50 text-center">
+                    <img src="https://placehold.co/400x300/fff8dc/b8860b?text=Kushk+Mubarak+☕" class="w-full rounded-2xl border-2 border-amber-200 mb-3 shadow-inner object-cover" alt="Kushk Mubarak Picture">
+                    <h3 class="english-text font-black text-amber-600 text-2xl mb-2">Kushk Mubarak</h3>
+                    <p class="english-text text-lg font-bold text-gray-700 leading-snug">A small historical building used by the Sheikh to receive guests. ☕</p>
+                    <div class="mt-4 bg-amber-100 text-amber-800 text-sm py-1 px-4 rounded-full inline-block font-bold">Tap anywhere to close ✨</div>
+                </div>
+
+                <!-- Bayt Abdullah -->
+                <div class="map-pin absolute bottom-[35%] right-[42%] flex flex-col items-center group" onclick="showTooltip('tooltip-bayt', this)">
+                    <div class="text-6xl text-pink-500 drop-shadow-md group-hover:animate-bounce">📍</div>
+                    <div class="english-text font-bold bg-white px-3 py-1 rounded-full mt-1 text-sm border-2 border-pink-200 shadow-sm text-pink-900">Bayt Abdullah</div>
+                </div>
+                <div id="tooltip-bayt" class="tooltip place-popup !fixed !top-1/2 !left-1/2 !transform !-translate-x-1/2 !-translate-y-1/2 bg-white p-5 rounded-3xl border-4 border-pink-400 shadow-[0_15px_50px_rgba(255,105,180,0.3)] !w-[320px] z-50 text-center">
+                    <img src="https://placehold.co/400x300/fff0f5/ff1493?text=Bayt+Abdullah+💖" class="w-full rounded-2xl border-2 border-pink-200 mb-3 shadow-inner object-cover" alt="Bayt Abdullah Picture">
+                    <h3 class="english-text font-black text-pink-600 text-2xl mb-2">Bayt Abdullah</h3>
+                    <p class="english-text text-lg font-bold text-gray-700 leading-snug">A traditional house that gives love and care to sick children. 🏥💕</p>
+                    <div class="mt-4 bg-pink-100 text-pink-800 text-sm py-1 px-4 rounded-full inline-block font-bold">Tap anywhere to close ✨</div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+                <p class="text-md font-bold text-accent bg-white px-4 py-2 rounded-full border border-pink-200 shadow-sm"><i class="fa-solid fa-hand-pointer"></i> طقي على كل الدبابيس عشان نكمل الرحلة!</p>
+                <button id="btn-next-map" onclick="nextPage()" class="btn-primary py-2 px-8 rounded-full font-bold text-lg opacity-50 cursor-not-allowed pointer-events-none flex items-center gap-2">التالي <i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+        </div>
+
+        <div id="page-6" class="page flex-col h-full p-6 relative z-10 overflow-y-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-ink bg-white/80 py-3 rounded-2xl shadow-sm border-2 border-pink-200">
+                وصّلي كل مَعلَم تاريخي بوظيفته 🧩
+            </h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 justify-between flex-grow english-text max-w-4xl mx-auto w-full" dir="ltr">
+                <!-- Column A -->
+                <div class="flex flex-col gap-5 w-full md:w-5/12" id="match-col-a">
+                    <div class="card p-5 match-item text-center font-bold text-xl text-ink bg-white hover:bg-pink-50" data-id="kushk" onclick="selectMatch(this, 'a')">☕ Kushk Mubarak</div>
+                    <div class="card p-5 match-item text-center font-bold text-xl text-ink bg-white hover:bg-pink-50" data-id="bayt" onclick="selectMatch(this, 'a')">💖 Bayt Abdullah</div>
+                    <div class="card p-5 match-item text-center font-bold text-xl text-ink bg-white hover:bg-pink-50" data-id="souq" onclick="selectMatch(this, 'a')">🛍️ Souq Al-Mubarakiya</div>
+                </div>
+
+                <!-- Decorative center -->
+                <div class="hidden md:flex flex-col justify-center items-center w-2/12 opacity-50 text-3xl text-pink-300">
+                    <i class="fa-solid fa-link floating" style="animation-delay: 0s;"></i>
+                    <div class="h-10 border-l-2 border-dashed border-pink-300 my-2"></div>
+                    <i class="fa-solid fa-link floating" style="animation-delay: 0.5s;"></i>
+                    <div class="h-10 border-l-2 border-dashed border-pink-300 my-2"></div>
+                    <i class="fa-solid fa-link floating" style="animation-delay: 1s;"></i>
+                </div>
+
+                <!-- Column B (Scrambled) -->
+                <div class="flex flex-col gap-5 w-full md:w-5/12" id="match-col-b">
+                    <div class="card p-5 match-item text-md font-bold text-gray-700 bg-white hover:bg-pink-50 flex items-center h-full" data-id="bayt" onclick="selectMatch(this, 'b')">is a house that gives care and love to sick children</div>
+                    <div class="card p-5 match-item text-md font-bold text-gray-700 bg-white hover:bg-pink-50 flex items-center h-full" data-id="souq" onclick="selectMatch(this, 'b')">was the center of selling and buying in the past</div>
+                    <div class="card p-5 match-item text-md font-bold text-gray-700 bg-white hover:bg-pink-50 flex items-center h-full" data-id="kushk" onclick="selectMatch(this, 'b')">was a small building where Sheikh Mubarak met his guests</div>
+                </div>
+            </div>
+
+            <!-- Short Answer part -->
+            <div class="mt-8 p-6 bg-white/80 border-4 border-dashed border-pink-300 rounded-3xl shadow-md max-w-2xl mx-auto w-full text-center relative">
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 text-4xl">🤔</div>
+                <p class="english-text font-bold text-xl mb-4 text-ink mt-2" dir="ltr">Why is the Red Palace important in Kuwait's history?</p>
+                <div class="flex flex-col items-center gap-3" dir="ltr">
+                    <button id="btn-reveal-answer" onclick="document.getElementById('short-answer').classList.remove('hidden'); this.style.display='none'; checkMatchingDone();" class="bg-gradient-to-r from-purple-400 to-pink-500 text-white px-8 py-3 rounded-full font-bold text-lg english-text hover:scale-105 transition-transform shadow-md">Show Answer ✨</button>
+                    <p id="short-answer" class="hidden text-pink-800 font-bold bg-pink-100 px-6 py-4 rounded-2xl english-text w-full text-center border-2 border-pink-300 text-lg shadow-inner animate-pulse-once">Because it protected Kuwait and its people. 🛡️</p>
+                </div>
+            </div>
+
+            <div class="flex justify-end mt-6" dir="rtl">
+                <button id="btn-next-match" onclick="nextPage()" class="btn-primary py-3 px-8 rounded-full font-bold text-xl opacity-50 cursor-not-allowed pointer-events-none flex items-center gap-2">التالي <i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+        </div>
+
+        <div id="page-7" class="page flex-col h-full p-6 relative z-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-ink bg-white/80 py-3 rounded-2xl border-2 border-pink-200 shadow-sm max-w-3xl mx-auto">
+                بإضافة المقطع السحري <span class="english-text text-accent bg-pink-100 px-2 rounded mx-1">(ness)</span> نحول الصفة إلى اسم! جربيها بنفسج 🪄
+            </h2>
+            
+            <div class="flex-grow flex flex-col items-center justify-center gap-12">
+                <!-- Machine Area -->
+                <div class="english-text text-3xl font-bold flex items-center justify-center w-full relative">
+                    
+                    <div class="flex items-center gap-4 bg-gradient-to-r from-pink-100 via-purple-100 to-blue-100 p-8 rounded-3xl border-4 border-white shadow-xl relative z-10 w-full max-w-2xl justify-center overflow-visible">
+                        <!-- Machine decorations -->
+                        <div class="absolute -top-6 -left-4 text-5xl floating">🦄</div>
+                        <div class="absolute -bottom-6 -right-4 text-5xl floating" style="animation-delay: 1.5s;">⭐</div>
+
+                        <!-- Left Word -->
+                        <div id="word-base" class="machine-part text-purple-700 bg-white px-6 py-4 rounded-2xl border-4 border-purple-200 shadow-md text-4xl">[kind]</div>
+                        
+                        <div id="word-plus" class="machine-part text-pink-400 text-4xl font-black bg-white rounded-full w-12 h-12 flex items-center justify-center shadow-sm">+</div>
+                        
+                        <!-- Suffix -->
+                        <div id="word-suffix" class="machine-part text-pink-600 bg-white px-6 py-4 rounded-2xl border-4 border-pink-300 shadow-md text-4xl bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHRleHQgeT0iMTYiIGZvbnQtc2l6ZT0iMTYiPuKcqDwvdGV4dD48L3N2Zz4=')] bg-repeat opacity-90">[ness]</div>
+                        
+                        <!-- Result (Hidden initially) -->
+                        <div id="word-result" class="machine-result absolute bg-gradient-to-br from-green-200 to-emerald-200 text-green-800 px-10 py-6 rounded-3xl border-4 border-white text-5xl shadow-2xl z-20 flex flex-col items-center justify-center min-w-[300px]">
+                            [kindness]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex flex-wrap justify-center gap-6 mt-4">
+                    <button onclick="runMachine('kind', 'طيبة', '🥰')" class="btn-option px-8 py-4 rounded-full font-bold text-xl flex items-center gap-3 bg-white hover:bg-pink-50 text-purple-800 border-2 border-purple-200 shadow-md hover:-translate-y-1">kind <i class="fa-solid fa-arrow-left text-pink-400"></i> طيبة</button>
+                    <button onclick="runMachine('fit', 'لياقة', '💪')" class="btn-option px-8 py-4 rounded-full font-bold text-xl flex items-center gap-3 bg-white hover:bg-pink-50 text-blue-800 border-2 border-blue-200 shadow-md hover:-translate-y-1">fit <i class="fa-solid fa-arrow-left text-pink-400"></i> لياقة</button>
+                    <button onclick="runMachine('sad', 'حزن', '🥺')" class="btn-option px-8 py-4 rounded-full font-bold text-xl flex items-center gap-3 bg-white hover:bg-pink-50 text-indigo-800 border-2 border-indigo-200 shadow-md hover:-translate-y-1">sad <i class="fa-solid fa-arrow-left text-pink-400"></i> حزن</button>
+                </div>
+            </div>
+
+            <div class="flex justify-end mt-4">
+                <button id="btn-next-machine" onclick="nextPage()" class="btn-primary py-3 px-8 rounded-full font-bold text-xl opacity-50 cursor-not-allowed pointer-events-none flex items-center gap-2">التالي <i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+        </div>
+
+        <div id="page-8" class="page flex-col h-full p-4 md:p-6 relative z-10 overflow-y-auto">
+            <h2 class="text-2xl font-bold text-center mb-6 text-ink bg-white/80 py-2 px-6 rounded-full inline-block mx-auto border-2 border-pink-200 shadow-sm">
+                مخطط الأفكار الذكي: رحلة إلى المباركية 📝✨
+            </h2>
+            
+            <div class="flex-grow flex flex-col md:flex-row gap-6 english-text max-w-5xl mx-auto w-full" dir="ltr">
+                
+                <!-- Mind Map -->
+                <div class="w-full md:w-1/2 flex flex-col gap-4">
+                    <div class="card p-4 bg-purple-50 border-purple-200 cursor-pointer hover:bg-purple-100 transition-colors shadow-sm relative overflow-hidden group" onclick="revealParagraph(1, this)">
+                        <div class="absolute right-[-10px] top-[-10px] text-5xl opacity-20 group-hover:scale-110 transition-transform">📍</div>
+                        <p class="font-bold text-purple-600 text-sm mb-1 uppercase tracking-wider">Where did you go?</p>
+                        <p class="font-bold text-purple-900 text-xl">Al Mubarakiya market</p>
+                    </div>
+                    <div class="card p-4 bg-pink-50 border-pink-200 cursor-pointer hover:bg-pink-100 transition-colors shadow-sm relative overflow-hidden group" onclick="revealParagraph(2, this)">
+                        <div class="absolute right-[-10px] top-[-10px] text-5xl opacity-20 group-hover:scale-110 transition-transform">👨‍👩‍👧‍👦</div>
+                        <p class="font-bold text-pink-600 text-sm mb-1 uppercase tracking-wider">Who with?</p>
+                        <p class="font-bold text-pink-900 text-xl">my family</p>
+                    </div>
+                    <div class="card p-4 bg-emerald-50 border-emerald-200 cursor-pointer hover:bg-emerald-100 transition-colors shadow-sm relative overflow-hidden group" onclick="revealParagraph(3, this)">
+                        <div class="absolute right-[-10px] top-[-10px] text-5xl opacity-20 group-hover:scale-110 transition-transform">🏪</div>
+                        <p class="font-bold text-emerald-600 text-sm mb-1 uppercase tracking-wider">What did you see?</p>
+                        <p class="font-bold text-emerald-900 text-xl">shops</p>
+                    </div>
+                    <div class="card p-4 bg-amber-50 border-amber-200 cursor-pointer hover:bg-amber-100 transition-colors shadow-sm relative overflow-hidden group" onclick="revealParagraph(4, this)">
+                        <div class="absolute right-[-10px] top-[-10px] text-5xl opacity-20 group-hover:scale-110 transition-transform">👗</div>
+                        <p class="font-bold text-amber-600 text-sm mb-1 uppercase tracking-wider">What did you buy?</p>
+                        <p class="font-bold text-amber-900 text-xl">clothes and spices</p>
+                    </div>
+                    <div class="card p-4 bg-blue-50 border-blue-200 cursor-pointer hover:bg-blue-100 transition-colors shadow-sm relative overflow-hidden group" onclick="revealParagraph(5, this)">
+                        <div class="absolute right-[-10px] top-[-10px] text-5xl opacity-20 group-hover:scale-110 transition-transform">🤩</div>
+                        <p class="font-bold text-blue-600 text-sm mb-1 uppercase tracking-wider">How did you feel?</p>
+                        <p class="font-bold text-blue-900 text-xl">proud and excited</p>
+                    </div>
+                </div>
+
+                <!-- Paragraph Result -->
+                <div class="w-full md:w-1/2 bg-[#fdf5e6] rounded-3xl border-4 border-pink-300 p-8 shadow-inner relative leading-loose text-2xl h-80 md:h-auto flex flex-col justify-start pt-12">
+                    <div class="absolute top-0 left-0 w-full h-full rounded-3xl" style="background-image: repeating-linear-gradient(transparent, transparent 49px, #f4c2c2 49px, #f4c2c2 50px);"></div>
+                    <div class="absolute top-2 left-6 text-pink-400 text-3xl font-serif">"</div>
+                    <div class="absolute bottom-4 right-6 text-pink-400 text-3xl font-serif rotate-180">"</div>
+                    <p class="relative z-10 font-bold text-ink" style="line-height: 50px;">
+                        <span id="p-part-1" class="opacity-0 transition-opacity duration-700 bg-purple-100 px-1 rounded">Last week, I went to Al Mubarakiya market. </span>
+                        <span id="p-part-2" class="opacity-0 transition-opacity duration-700 text-pink-800 bg-pink-100 px-1 rounded">I went with my family. </span>
+                        <span id="p-part-3" class="opacity-0 transition-opacity duration-700 text-emerald-800 bg-emerald-100 px-1 rounded">I saw shops. </span>
+                        <span id="p-part-4" class="opacity-0 transition-opacity duration-700 text-amber-800 bg-amber-100 px-1 rounded">I bought clothes and spices. </span>
+                        <span id="p-part-5" class="opacity-0 transition-opacity duration-700 text-blue-800 bg-blue-100 px-1 rounded">I was proud and excited.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mt-6" dir="rtl">
+                <p class="text-md font-bold text-accent bg-white px-4 py-2 rounded-full border border-pink-200 shadow-sm"><i class="fa-solid fa-pen-fancy"></i> طقي على المربعات عشان نكتب القصة مع بعض! ✍️</p>
+                <button id="btn-next-write" onclick="nextPage()" class="btn-primary py-3 px-8 rounded-full font-bold text-xl opacity-50 cursor-not-allowed pointer-events-none mr-auto flex items-center gap-2">التالي <i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+        </div>
+
+        <div id="page-9" class="page flex-col items-center justify-center h-full p-6 text-center relative z-10 bg-gradient-to-t from-paper to-pastel-pink">
+            
+            <!-- Confetti / Stars background -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-10 left-10 text-4xl animate-bounce" style="animation-duration: 2s;">🌟</div>
+                <div class="absolute top-20 right-20 text-3xl animate-bounce" style="animation-duration: 2.5s; animation-delay: 0.5s;">🎉</div>
+                <div class="absolute bottom-20 left-30 text-5xl animate-bounce" style="animation-duration: 3s; animation-delay: 1s;">🎀</div>
+                <div class="absolute bottom-10 right-10 text-4xl animate-bounce" style="animation-duration: 2.2s; animation-delay: 0.2s;">👑</div>
+            </div>
+
+            <div class="text-8xl mb-6 text-pink-500 drop-shadow-2xl floating">
+                💎
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-ink drop-shadow-sm">
+                لقد وجدتِ الكنز! 🎉
+            </h1>
+            <p class="text-2xl md:text-3xl mb-8 text-ink font-bold max-w-2xl leading-relaxed bg-white/60 p-6 rounded-3xl border-2 border-white shadow-sm">
+                عمل رائع يا أميرتي الذكية! 👑<br>
+                لقد جمعتِ كل كنوز الماضي، وتعلمتِ الكثير. أنتِ بطلة! 💖
+            </p>
+
+            <div class="flex gap-4 mb-10 english-text font-bold text-pink-700 text-lg bg-white/80 p-5 rounded-2xl border-2 border-pink-300 flex-wrap justify-center shadow-inner">
+                <span class="bg-pink-100 px-3 py-1 rounded-full">Courage 🦁</span> • 
+                <span class="bg-purple-100 px-3 py-1 rounded-full">Past Simple 🕰️</span> • 
+                <span class="bg-blue-100 px-3 py-1 rounded-full">Protect 🛡️</span> • 
+                <span class="bg-green-100 px-3 py-1 rounded-full">Society 👯‍♀️</span> • 
+                <span class="bg-yellow-100 px-3 py-1 rounded-full">-ness ✨</span>
+            </div>
+            
+            <button onclick="resetGame()" class="btn-primary text-2xl font-bold py-4 px-12 rounded-full flex items-center gap-3 relative overflow-hidden group">
+                <span class="relative z-10">العب مرة أخرى 🔄</span>
+                <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full"></div>
+            </button>
+        </div>
+
+    </div>
+
+    <script>
+        // --- Add sparkles to background dynamically ---
+        function createSparkles() {
+            const container = document.querySelector('.game-container');
+            for (let i = 0; i < 15; i++) {
+                let sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(sparkle);
+            }
+        }
+        createSparkles();
+
+        let currentPage = 0;
+        const totalPages = 10;
+
+        function updateProgress() {
+            document.getElementById('progress-indicator').innerText = `${currentPage + 1} / ${totalPages}`;
+        }
+
+        function showPage(index) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(`page-${index}`).classList.add('active');
+            updateProgress();
+            
+            // Re-trigger animations by removing and adding classes if needed
+            if(index === 8) {
+                // Reset paragraph opacities if returning to page
+                for(let i=1; i<=5; i++) document.getElementById(`p-part-${i}`).classList.replace('opacity-100', 'opacity-0');
+                revealedParts = 0;
+                document.getElementById('btn-next-write').classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function resetGame() {
+            currentPage = 0;
+            vocabScores = {1:false, 2:false, 3:false, 4:false};
+            grammarScores = {1:false, 2:false, 3:false, 4:false};
+            mapClicks = 0;
+            clickedPins.clear();
+            selectedMatchA = null;
+            selectedMatchB = null;
+            matchedPairs = 0;
+            machineUsedCount = 0;
+            wordsTried.clear();
+            revealedParts = 0;
+            
+            // Reset UI Vocab
+            document.querySelectorAll('#page-2 .btn-option').forEach(btn => {
+                btn.classList.remove('correct', 'wrong');
+                btn.disabled = false;
+            });
+            document.getElementById('btn-next-vocab').classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+            document.getElementById('vocab-msg').classList.remove('hidden'); // Show instruction msg again
+            
+            // Reset UI Grammar
+            document.querySelectorAll('#page-4 .btn-option').forEach(btn => {
+                btn.classList.remove('correct', 'wrong');
+                btn.disabled = false;
+            });
+            document.getElementById('btn-next-grammar').classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+            
+            // Restore original grammar text (Hardcoded for simplicity in reset)
+            const q1Text = document.querySelector('#page-4 .card:nth-child(1) p');
+            q1Text.innerHTML = `Last week, there <span class="bg-red-100 px-3 py-1 rounded-lg line-through text-red-600 border border-red-200">is</span> a strong wind. 🌬️`;
+            const q2Text = document.querySelector('#page-4 .card:nth-child(2) p');
+            q2Text.innerHTML = `She didn't <span class="border-b-4 border-dashed border-pink-300 px-6 inline-block"></span> breakfast this morning. 🥞`;
+            const q3Text = document.querySelector('#page-4 .card:nth-child(3) p');
+            q3Text.innerHTML = `The two cats <span class="border-b-4 border-dashed border-pink-300 px-6 inline-block"></span> yesterday. 🐈🐈‍⬛`;
+            const q4Text = document.querySelector('#page-4 .card:nth-child(4) p');
+            q4Text.innerHTML = `Dad <span class="border-b-4 border-dashed border-pink-300 px-6 inline-block"></span> a new car last month. 🚗`;
+
+            // Reset Map
+            document.getElementById('btn-next-map').classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+
+            // Reset Match
+            document.querySelectorAll('.match-item').forEach(item => {
+                item.classList.remove('selected', 'matched');
+            });
+            document.getElementById('short-answer').classList.add('hidden');
+            document.getElementById('btn-reveal-answer').style.display = 'block';
+            document.getElementById('btn-next-match').classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+
+            // Reset Machine
+            document.getElementById('word-result').classList.remove('show');
+            document.getElementById('word-base').style.opacity = '1';
+            document.getElementById('word-suffix').style.opacity = '1';
+            document.getElementById('word-plus').style.opacity = '1';
+            document.getElementById('word-base').innerText = '[kind]';
+            document.getElementById('btn-next-machine').classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+
+            // Reset Writing
+            for(let i=1; i<=5; i++) document.getElementById(`p-part-${i}`).classList.replace('opacity-100', 'opacity-0');
+            document.getElementById('btn-next-write').classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+
+            showPage(0);
+        }
+
+        // --- Page 2: Vocab Quiz ---
+        let vocabScores = {1:false, 2:false, 3:false, 4:false};
+        function checkVocab(btn, qNum, isCorrect) {
+            const container = document.getElementById(`q${qNum}-options`);
+            container.querySelectorAll('.btn-option').forEach(b => {
+                b.classList.remove('correct', 'wrong');
+            });
+
+            if (isCorrect) {
+                btn.classList.add('correct');
+                vocabScores[qNum] = true;
+                container.querySelectorAll('.btn-option').forEach(b => b.disabled = true);
+            } else {
+                btn.classList.add('wrong');
+                vocabScores[qNum] = false;
+                setTimeout(() => btn.classList.remove('wrong'), 500); 
+            }
+
+            if (Object.values(vocabScores).every(val => val === true)) {
+                const nextBtn = document.getElementById('btn-next-vocab');
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+                document.getElementById('vocab-msg').classList.add('hidden');
+            } else {
+                document.getElementById('vocab-msg').classList.remove('hidden');
+            }
+        }
+
+        // --- Page 4: Grammar Quiz ---
+        let grammarScores = {1:false, 2:false, 3:false, 4:false};
+        function checkGrammar(btn, qNum, isCorrect) {
+            const parent = btn.parentElement;
+            parent.querySelectorAll('.btn-option').forEach(b => b.classList.remove('correct', 'wrong'));
+            
+            if (isCorrect) {
+                btn.classList.add('correct');
+                grammarScores[qNum] = true;
+                parent.querySelectorAll('.btn-option').forEach(b => b.disabled = true);
+                
+                // Visual replacement
+                const sentence = parent.previousElementSibling;
+                const successStyle = "text-green-700 font-bold bg-green-100 px-3 py-1 rounded-lg border-2 border-green-300 shadow-sm";
+                if(qNum === 1) sentence.innerHTML = `Last week, there <span class="${successStyle}">was</span> a strong wind. 🌬️`;
+                if(qNum === 2) sentence.innerHTML = `She didn't <span class="${successStyle}">eat</span> breakfast this morning. 🥞`;
+                if(qNum === 3) sentence.innerHTML = `The two cats <span class="${successStyle}">fought</span> yesterday. 🐈🐈‍⬛`;
+                if(qNum === 4) sentence.innerHTML = `Dad <span class="${successStyle}">bought</span> a new car last month. 🚗`;
+
+            } else {
+                btn.classList.add('wrong');
+                grammarScores[qNum] = false;
+                setTimeout(() => btn.classList.remove('wrong'), 500);
+            }
+
+            if (Object.values(grammarScores).every(val => val === true)) {
+                const nextBtn = document.getElementById('btn-next-grammar');
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+            }
+        }
+
+        // --- Page 5: Map ---
+        let mapClicks = 0;
+        let clickedPins = new Set();
+        function showTooltip(id, element) {
+            document.querySelectorAll('.tooltip').forEach(t => t.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+            
+            // Add a little sparkle effect to the pin
+            element.querySelector('div').classList.add('animate-pulse');
+            setTimeout(()=> element.querySelector('div').classList.remove('animate-pulse'), 1000);
+
+            if (!clickedPins.has(id)) {
+                clickedPins.add(id);
+                mapClicks++;
+                if (mapClicks >= 4) {
+                    document.getElementById('btn-next-map').classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+                }
+            }
+
+            setTimeout(() => {
+                document.onclick = (e) => {
+                    if (!e.target.closest('.map-pin')) {
+                        document.getElementById(id).style.display = 'none';
+                        document.onclick = null;
+                    }
+                };
+            }, 100);
+        }
+
+        // --- Page 6: Matching ---
+        let selectedMatchA = null;
+        let selectedMatchB = null;
+        let matchedPairs = 0;
+
+        function selectMatch(element, col) {
+            if (element.classList.contains('matched')) return;
+
+            document.querySelectorAll(`#match-col-${col} .match-item`).forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+
+            if (col === 'a') selectedMatchA = element;
+            if (col === 'b') selectedMatchB = element;
+
+            if (selectedMatchA && selectedMatchB) {
+                if (selectedMatchA.dataset.id === selectedMatchB.dataset.id) {
+                    // Match found
+                    selectedMatchA.classList.remove('selected');
+                    selectedMatchA.classList.add('matched');
+                    selectedMatchB.classList.remove('selected');
+                    selectedMatchB.classList.add('matched');
+                    matchedPairs++;
+                    selectedMatchA = null;
+                    selectedMatchB = null;
+                    checkMatchingDone();
+                } else {
+                    // Wrong match
+                    const a = selectedMatchA, b = selectedMatchB;
+                    a.style.animation = 'shake 0.4s';
+                    b.style.animation = 'shake 0.4s';
+                    setTimeout(() => {
+                        a.classList.remove('selected');
+                        b.classList.remove('selected');
+                        a.style.animation = '';
+                        b.style.animation = '';
+                    }, 500);
+                    selectedMatchA = null;
+                    selectedMatchB = null;
+                }
+            }
+        }
+
+        function checkMatchingDone() {
+            if (matchedPairs === 3 && !document.getElementById('short-answer').classList.contains('hidden')) {
+                document.getElementById('btn-next-match').classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+            }
+        }
+
+        // --- Page 7: Suffix Machine ---
+        let machineUsedCount = 0;
+        let wordsTried = new Set();
+        function runMachine(baseWord, arabicMeaning, emoji) {
+            const resultBox = document.getElementById('word-result');
+            const baseBox = document.getElementById('word-base');
+            const plus = document.getElementById('word-plus');
+            const suffix = document.getElementById('word-suffix');
+
+            resultBox.classList.remove('show');
+            baseBox.style.opacity = '1';
+            suffix.style.opacity = '1';
+            plus.style.opacity = '1';
+            baseBox.innerText = `[${baseWord}]`;
+
+            setTimeout(() => {
+                baseBox.style.opacity = '0';
+                suffix.style.opacity = '0';
+                plus.style.opacity = '0';
+                
+                setTimeout(() => {
+                    resultBox.innerHTML = `
+                        <div class="flex items-center gap-2">
+                            [${baseWord}<span class="text-pink-600">ness</span>] ${emoji}
+                        </div>
+                        <span class="text-xl font-arabic text-green-900 bg-white/50 px-4 py-1 rounded-full mt-3 border border-green-300">(${arabicMeaning})</span>
+                    `;
+                    resultBox.classList.add('show');
+                    
+                    if(!wordsTried.has(baseWord)) {
+                        wordsTried.add(baseWord);
+                        machineUsedCount++;
+                        if(machineUsedCount >= 3) {
+                            document.getElementById('btn-next-machine').classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+                        }
+                    }
+                }, 400);
+            }, 400);
+        }
+
+        // --- Page 8: Writing ---
+        let revealedParts = 0;
+        function revealParagraph(partNum, element) {
+            const part = document.getElementById(`p-part-${partNum}`);
+            if (part.classList.contains('opacity-0')) {
+                part.classList.replace('opacity-0', 'opacity-100');
+                
+                // Add a little pop effect to the card clicked
+                if (element) {
+                    element.style.transform = 'scale(0.95)';
+                    setTimeout(() => element.style.transform = '', 150);
+                }
+
+                revealedParts++;
+                if (revealedParts === 5) {
+                    document.getElementById('btn-next-write').classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+                }
+            }
+        }
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>
